@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primarySoftOrange:hsl(35, 77%, 62%);
+    --primarySoftRed: hsl(5, 85%, 63%);
+    --naturalOffWhite: hsl(233, 8%, 79%);
+    --naturalDarkColor: hsl(236, 13%, 42%);
+    --naturalVeryDarkColor: hsl(240, 100%, 5%);
+    --primaryFont: Inter;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto ;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageSection{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: var(--primaryFont);
+}
+
+header{
+    margin-top: 50px;
+    width: 80%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav{
+        display: flex;
+        gap: 30px;
+
+        .navItems{
+            color: var(--naturalVeryDarkColor);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s linear;
+
+            &:hover{
+                color: var(--primarySoftRed);
+            }
+        }
+    }
+}
+
+main{
+    width: 80%;
+    font-family: var(--primaryFont);
+    margin-bottom: 50px;
+
+    .container{
+        display: flex;
+    }
+}
+    
+#upperContainer{
+    gap: 20px;
+    margin-bottom: 50px;
+        
+    #leftSubcontainer{
+        width: 70%;
+
+        #imageBox{
+            margin-bottom: 20px;
+
+            .imageSection{
+                #desktopImage{
+                    display: block;
+                }
+
+                #mobileImage{
+                    display: none;
+                }
+            }
+        }
+
+        #introductionBox{
+            display: flex;
+
+            #leftSubcontentBox{
+                width: 50%;
+
+                #introductionHeading{
+                    font-size: 50px;
+                    font-weight: 800;
+                    color: var(--naturalVeryDarkColor);
+                }
+            }
+                
+            #rightSubcontentBox{
+                width: 50%;
+
+                #introductionPara{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: var(--naturalDarkColor);
+                    line-height: 25px;
+                    margin-bottom: 20px;
+                }
+
+                #readMoreBtn{
+                    width: 50%;
+                    padding: 10px 10px;
+                    border: none;
+                    background-color: var(--primarySoftRed);
+                    color: var(--naturalVeryDarkColor);
+                    font-weight: 800;
+                    font-family: var(--primaryFont);
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    transition: background-color 0.2s linear, color 0.2s linear;
+
+                    &:hover{
+                        background-color: var(--naturalVeryDarkColor);
+                        color: var(--naturalOffWhite);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    #rightSubcontainer{
+        width: 30%;
+        background-color: var(--naturalVeryDarkColor);
+        color: white;
+        padding: 20px;
+        align-items: start;
+        flex-direction: column;
+
+        #articleHeading{
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--primarySoftOrange);
+        }
+
+        .content{
+            .questionHeading{
+                margin-bottom: 10px;
+                font-weight: 700;
+                font-size: 18px;
+                transition: color 0.2s linear;
+
+                &:hover{
+                    color: var(--primarySoftOrange);
+                    cursor: pointer;
+                }
+            }
+
+            .question{
+                font-size: 14px;
+                color: var(--naturalOffWhite);
+                line-height: 20px;
+            }
+        }
+
+        hr{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+}
+
+#lowerContainer{
+    gap: 30px;
+
+    .subcontainer{
+        display: flex;
+        gap: 20px;
+
+        #detailsContent{
+
+            .number{
+                color: var(--primarySoftRed);
+                font-size: 30px;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+
+            .name{
+                font-weight: 900;
+                margin-bottom: 15px;
+                color: var(--naturalVeryDarkColor);
+                transition: color 0.2s linear;
+
+                &:hover{
+                    cursor: pointer;
+                    color: var(--primarySoftRed);
+                }
+            }
+
+            .detailsPara{
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--naturalDarkColor);
+                line-height: 20px;
+            }
+        }
+    }
+}
+
