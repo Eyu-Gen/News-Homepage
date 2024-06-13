@@ -22,6 +22,7 @@ body{
     min-height: 100vh;
     margin: 0 auto ;
     position: relative;
+    overflow-x: hidden;
 }
 
 #overlay{
@@ -105,7 +106,7 @@ main{
 }
 
 #navSideBar {
-    position: absolute;
+    position: fixed;
     background-color: white;
     width: 70%;
     height: 100vh;
@@ -114,6 +115,7 @@ main{
     padding: 30px;
     box-sizing: border-box;
     transition: right 0.3s ease; 
+    touch-action: none;
 
     #menuCloseBtn {
         position: absolute;
@@ -281,6 +283,10 @@ main{
 }
 
 @media (max-width: 700px) {
+    body{
+        overflow-x: hidden;
+    }
+
     header{
         width: 90%;
         margin-top: 10px;
