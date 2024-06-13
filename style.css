@@ -251,7 +251,7 @@ main{
         display: flex;
         gap: 20px;
 
-        #detailsContent{
+        .detailsContent{
 
             .number{
                 color: var(--primarySoftRed);
@@ -390,7 +390,7 @@ main{
 
     #lowerContainer{  
         .subcontainer{  
-            #imageContent{
+            .imageContent{
                 width: 30%;
                 
                 .imageSection{
@@ -398,7 +398,7 @@ main{
                 }
             }
                 
-            #detailsContent{
+            .detailsContent{
                 width: 70%;
 
                 .number{
