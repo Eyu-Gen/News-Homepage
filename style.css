@@ -21,6 +21,7 @@ body{
     max-width: 1440px;
     min-height: 100vh;
     margin: 0 auto ;
+    position: relative;
 }
 
 .center{
@@ -33,7 +34,7 @@ body{
     img{
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
     }
 }
 
@@ -44,6 +45,23 @@ a{
     font-family: var(--primaryFont);
 }
 
+nav{
+    display: flex;
+    gap: 30px;
+
+    .navItems{
+        color: var(--naturalVeryDarkColor);
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s linear;
+
+        &:hover{
+            color: var(--primarySoftRed);
+        }
+    }
+
+}
+
 header{
     margin-top: 50px;
     width: 80%;
@@ -52,19 +70,17 @@ header{
     justify-content: space-between;
     align-items: center;
 
-    nav{
+    .imageSection{
+        img{
+            object-fit: contain;
+        }
+    }
+
+    .navWrapper{
         display: flex;
-        gap: 30px;
 
-        .navItems{
-            color: var(--naturalVeryDarkColor);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.2s linear;
-
-            &:hover{
-                color: var(--primarySoftRed);
-            }
+        #menuBtn{
+            display: none;
         }
     }
 }
@@ -76,6 +92,32 @@ main{
 
     .container{
         display: flex;
+    }
+}
+
+#navSideBar {
+    position: absolute;
+    background-color: white;
+    width: 70%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    display: none;
+
+    #menuCloseBtn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    nav {
+        flex-direction: column;
+        width: fit-content;
+        margin-top: 100px;
     }
 }
     
@@ -158,8 +200,8 @@ main{
             font-size: 30px;
             margin-top: 10px;
             margin-bottom: 20px;
-            text-transform: uppercase;
             font-weight: 700;
+            text-transform: capitalize;
             color: var(--primarySoftOrange);
         }
 
@@ -229,3 +271,135 @@ main{
     }
 }
 
+@media (max-width: 700px) {
+    header{
+        width: 90%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+        .imageSection{
+            width: 30px;
+            height: 30px;
+        }
+
+        .navWrapper{
+            nav{
+                display: none;
+            }
+
+            #menuBtn{
+                display: block;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    main{
+        width: 90%;
+        margin-bottom: 50px;
+        
+        .container{
+            width: 100%;
+            flex-direction: column;
+        }        
+    }
+
+    #upperContainer{
+        gap: 20px;
+        margin-bottom: 50px;
+        
+        #leftSubcontainer{
+            width: 100%;
+
+            #imageBox{
+                margin-bottom: 10px;
+
+                .imageSection{
+                    #desktopImage{
+                        display: none;
+                    }
+
+                    #mobileImage{
+                        display: block;
+                    }
+                }
+            }
+
+            #introductionBox{
+                flex-direction: column;
+
+                #leftSubcontentBox{
+                    width: 100%;
+
+                    #introductionHeading{
+                        font-size: 40px;
+                    }
+                }
+                    
+                #rightSubcontentBox{
+                    width: 100%;
+
+                    #introductionPara{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        #rightSubcontainer{
+            width: 100%;
+
+            #articleHeading{
+                font-size: 25px;
+            }
+
+            .content{
+                .questionHeading{
+                    font-size: 16px;
+                }
+
+                .question{
+                    font-size: 12px;
+                }
+            }
+
+            hr{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+        }
+    }
+
+    #lowerContainer{  
+        .subcontainer{  
+            #imageContent{
+                width: 30%;
+                
+                .imageSection{
+                    height: 100%;
+                }
+            }
+                
+            #detailsContent{
+                width: 70%;
+
+                .number{
+                    font-size: 25px;
+                }
+    
+                .name{
+                    font-size: 15px;
+                }
+    
+                .detailsPara{
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: var(--naturalDarkColor);
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
